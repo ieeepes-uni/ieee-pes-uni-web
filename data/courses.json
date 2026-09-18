@@ -1,22 +1,18 @@
 [
   {
-    "titulo": "Compensación de Potencia Reactiva: Modelamiento y control de compensadores estáticos (SVC)",
+    "titulo": "Compensación de Potencia Reactiva: Modelamiento y control de SVC",
     "instructor": "Ing. Dr. Francis Arody Moreno — Universidad de Brasilia",
-    "descripcion": "Curso virtual de 3 sesiones sobre modelamiento y control de compensadores estáticos (SVC) en sistemas eléctricos de potencia.",
-    "poster": "",
-    "diapositivas": "",
+    "descripcion": "Curso virtual de 3 sesiones sobre modelamiento y control de compensadores estáticos (SVC) en sistemas eléctricos de potencia. Septiembre 2026.",
+    "poster": "fotos/poster-svc.png",
+    "diapositivas": "documentos/SVC_Aula01.pdf",
     "sesiones": [
       {
         "nombre": "Sesión 1",
-        "video": ""
+        "video": "https://youtu.be/Ft4BbUBgxUA"
       },
       {
         "nombre": "Sesión 2",
-        "video": ""
-      },
-      {
-        "nombre": "Sesión 3",
-        "video": ""
+        "video": "https://youtu.be/oZm7qcFuZjk"
       }
     ]
   }
