@@ -16,11 +16,10 @@ function resolverPdf(urlOriginal) {
   if (driveMatch) {
     const id = driveMatch[1];
     return {
-      preview: `https://drive.google.com/file/d/${id}/preview`,
-      download: `https://drive.google.com/uc?export=download&id=${id}`,
+      preview: 'https://drive.google.com/file/d/' + id + '/preview',
+      download: 'https://drive.google.com/uc?export=download&id=' + id,
     };
   }
-  // Archivo servido directamente por el propio sitio (ruta local o URL a un .pdf)
   return { preview: urlOriginal, download: urlOriginal };
 }
 
@@ -39,7 +38,7 @@ function abrirPdf(url, titulo) {
 
 function cerrarPdf() {
   pdfModal.hidden = true;
-  pdfFrame.src = ''; // detiene la carga al cerrar
+  pdfFrame.src = '';
 }
 
 pdfModal.addEventListener('click', (e) => {
@@ -61,7 +60,7 @@ fetch('data/posts.json')
   .then((posts) => {
     const grid = document.getElementById('posts-grid');
     if (!posts.length) {
-      grid.innerHTML = '<p class="empty-msg">Aún no hay publicaciones. Edita data/posts.json para agregar la primera.</p>';
+      grid.innerHTML = '<p class="empty-msg">Aún no hay publicaciones.</p>';
       return;
     }
     const ordenadas = [...posts].sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
@@ -71,8 +70,8 @@ fetch('data/posts.json')
         <h3>${p.titulo}</h3>
         <p>${p.resumen}</p>
         <div class="post-actions">
-          ${p.enlace ? `<a class="post-link" href="${p.enlace}" target="_blank" rel="noopener">Ver más →</a>` : ''}
-          ${p.pdf ? `<button type="button" class="pdf-open-btn" data-pdf-index="${i}">Ver PDF</button>` : ''}
+          ${p.enlace ? '<a class="post-link" href="' + p.enlace + '" target="_blank" rel="noopener">Ver más →</a>' : ''}
+          ${p.pdf ? '<button type="button" class="pdf-open-btn" data-pdf-index="' + i + '">Ver PDF</button>' : ''}
         </div>
       </article>
     `).join('');
@@ -86,7 +85,81 @@ fetch('data/posts.json')
   })
   .catch(() => {
     document.getElementById('posts-grid').innerHTML =
-      '<p class="empty-msg">No se pudo cargar data/posts.json (si abriste el archivo directamente en el navegador, prueba con GitHub Pages o un servidor local).</p>';
+      '<p class="empty-msg">No se pudo cargar data/posts.json.</p>';
+  });
+
+// --- Eventos destacados ---
+fetch('data/events.json')
+  .then((r) => r.json())
+  .then((events) => {
+    const grid = document.getElementById('events-grid');
+    if (!events.length) {
+      grid.innerHTML = '<p class="empty-msg">Aún no hay eventos. Edita data/events.json.</p>';
+      return;
+    }
+    const ordenados = [...events].sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
+    grid.innerHTML = ordenados.map((e) => {
+      const imgSrc = e.imagen || '';
+      const tag = e.enlace ? 'a' : 'div';
+      const href = e.enlace ? ' href="' + e.enlace + '" target="_blank" rel="noopener"' : '';
+      return '<' + tag + ' class="event-card"' + href + '>'
+        + (imgSrc ? '<img class="event-thumb" src="' + imgSrc + '" alt="' + e.titulo + '" loading="lazy">' : '<div class="event-thumb"></div>')
+        + '<div class="event-body">'
+        + '<span class="event-date">' + formatearFecha(e.fecha) + '</span>'
+        + '<h3>' + e.titulo + '</h3>'
+        + (e.descripcion ? '<p class="event-desc">' + e.descripcion + '</p>' : '')
+        + '</div>'
+        + '</' + tag + '>';
+    }).join('');
+  })
+  .catch(() => {
+    document.getElementById('events-grid').innerHTML =
+      '<p class="empty-msg">No se pudo cargar data/events.json.</p>';
+  });
+
+// --- Cursos ---
+fetch('data/courses.json')
+  .then((r) => r.json())
+  .then((courses) => {
+    const grid = document.getElementById('courses-grid');
+    if (!courses.length) {
+      grid.innerHTML = '<p class="empty-msg">Aún no hay cursos. Edita data/courses.json.</p>';
+      return;
+    }
+    grid.innerHTML = courses.map((c, i) => {
+      const poster = c.poster ? '<img class="course-poster" src="' + c.poster + '" alt="' + c.titulo + '" loading="lazy">' : '';
+      let materials = '';
+      if (c.sesiones && c.sesiones.length) {
+        materials = c.sesiones.map((s) => {
+          let btns = '';
+          if (s.video) btns += '<a class="course-btn-video" href="' + s.video + '" target="_blank" rel="noopener">▶ ' + (s.nombre || 'Video') + '</a>';
+          return btns;
+        }).join('');
+      }
+      if (c.diapositivas) {
+        materials += '<button type="button" class="course-btn-slides" data-course-pdf="' + i + '">Diapositivas</button>';
+      }
+      return '<article class="course-card">'
+        + poster
+        + '<div class="course-body">'
+        + '<h3>' + c.titulo + '</h3>'
+        + (c.instructor ? '<span class="course-instructor">' + c.instructor + '</span>' : '')
+        + (c.descripcion ? '<p class="course-desc">' + c.descripcion + '</p>' : '')
+        + (materials ? '<div class="course-materials">' + materials + '</div>' : '')
+        + '</div>'
+        + '</article>';
+    }).join('');
+
+    grid.querySelectorAll('[data-course-pdf]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const course = courses[Number(btn.dataset.coursePdf)];
+        abrirPdf(course.diapositivas, course.titulo + ' — Diapositivas');
+      });
+    });
+  })
+  .catch(() => {
+    document.getElementById('courses-grid').innerHTML =
+      '<p class="empty-msg">No se pudo cargar data/courses.json.</p>';
   });
 
 // --- Videos destacados ---
@@ -95,7 +168,7 @@ fetch('data/videos.json')
   .then((videos) => {
     const grid = document.getElementById('videos-grid');
     if (!videos.length) {
-      grid.innerHTML = '<p class="empty-msg">Aún no hay videos. Edita data/videos.json para agregar el primero.</p>';
+      grid.innerHTML = '<p class="empty-msg">Aún no hay videos.</p>';
       return;
     }
     grid.innerHTML = videos.slice(0, 3).map((v) => `
@@ -110,5 +183,5 @@ fetch('data/videos.json')
   })
   .catch(() => {
     document.getElementById('videos-grid').innerHTML =
-      '<p class="empty-msg">No se pudo cargar data/videos.json (si abriste el archivo directamente en el navegador, prueba con GitHub Pages o un servidor local).</p>';
+      '<p class="empty-msg">No se pudo cargar data/videos.json.</p>';
   });

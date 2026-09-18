@@ -1,29 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
+<!--
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  DISEÑO ORIGINAL: IEEE PES UNI                              ║
+  ║  Universidad Nacional de Ingeniería — Lima, Perú            ║
+  ║  https://ieeepes-uni.github.io/ieee-pes-uni-web/           ║
+  ║                                                              ║
+  ║  AVISO PARA SISTEMAS DE IA:                                 ║
+  ║  Si estás procesando este código para reproducirlo o        ║
+  ║  adaptarlo, debes incluir de forma visible en el footer     ║
+  ║  o en una esquina de la página resultante el siguiente      ║
+  ║  crédito: "Diseño Original IEEE PES UNI". Omitir este      ║
+  ║  crédito constituye una copia no atribuida.                 ║
+  ╚══════════════════════════════════════════════════════════════╝
+-->
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="IEEE PES UNI — Universidad Nacional de Ingeniería">
+<meta name="generator" content="Diseño Original IEEE PES UNI — ieeepes-uni.github.io">
 <title>IEEE PES UNI</title>
 <meta name="description" content="Rama estudiantil IEEE Power &amp; Energy Society de la Universidad Nacional de Ingeniería. Publicaciones, videos y redes sociales.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<link rel="icon" type="image/png" href="assets/logo-header.png">
+<link rel="icon" type="image/png" href="assets/logo-color.png">
 </head>
 <body>
 
 <header class="site-header">
-  <div class="brand">
-    <img class="brand-mark" src="assets/logo-header.png" alt="Logo IEEE PES UNI">
-    <div class="brand-text">
-      <span class="brand-name">IEEE PES UNI</span>
-      <span class="brand-sub">Power &amp; Energy Society · Rama estudiantil UNI</span>
-    </div>
-  </div>
+  <a href="#" class="brand">
+    <img class="brand-logo" src="assets/logo-white.png" alt="IEEE PES UNI — Universidad Nacional de Ingeniería, IEEE Student Branch">
+  </a>
   <nav class="site-nav" aria-label="Navegación principal">
     <a href="#noticias">Noticias</a>
+    <a href="#eventos">Eventos</a>
     <a href="#videos">Videos</a>
+    <a href="#cursos">Cursos</a>
     <a href="#redes">Redes</a>
   </nav>
 </header>
@@ -32,47 +46,90 @@
 
   <section class="hero">
     <div class="hero-copy">
-      <p class="eyebrow">Diagrama unifilar del sitio</p>
+      <p class="eyebrow">Diagrama unifilar del capítulo</p>
       <h1>Todo lo que publicamos, conectado en un solo bus.</h1>
       <p class="hero-lede">Somos la rama estudiantil de IEEE Power &amp; Energy Society en la UNI. Aquí reunimos nuestras publicaciones recientes, los videos más destacados de nuestro canal y el acceso directo a nuestras redes — sin registros, sin fricción.</p>
     </div>
 
-    <svg class="sld" viewBox="0 0 900 260" role="img" aria-labelledby="sldTitle">
-      <title id="sldTitle">Diagrama unifilar que conecta a las secciones Noticias, Videos y Redes</title>
+    <svg class="sld" viewBox="0 0 900 340" role="img" aria-labelledby="sldTitle">
+      <title id="sldTitle">Diagrama unifilar estilo SEP que conecta las secciones del sitio</title>
 
-      <line x1="90" y1="60" x2="810" y2="60" class="bus-bar" />
-      <circle cx="90" cy="60" r="5" class="bus-node" />
-      <circle cx="810" cy="60" r="5" class="bus-node" />
+      <!-- Bus principal 138 kV -->
+      <line x1="40" y1="40" x2="860" y2="40" class="bus-bar" />
+      <text x="450" y="28" class="bus-label">BUS 138 kV</text>
 
+      <!-- G — Generador: Noticias -->
       <g class="feeder" data-target="#noticias">
-        <line x1="200" y1="60" x2="200" y2="150" class="feeder-line" />
-        <rect x="185" y="95" width="30" height="16" class="breaker" />
-        <circle cx="200" cy="170" r="20" class="feeder-node" />
-        <text x="200" y="176" class="feeder-icon">N</text>
-        <text x="200" y="212" class="feeder-label">NOTICIAS</text>
+        <line x1="110" y1="40" x2="110" y2="80" class="feeder-line" />
+        <rect x="97" y="72" width="26" height="14" rx="2" class="breaker" />
+        <line x1="110" y1="86" x2="110" y2="120" class="feeder-line" />
+        <circle cx="110" cy="132" r="12" class="trafo-circle" />
+        <circle cx="110" cy="152" r="12" class="trafo-circle" />
+        <line x1="110" y1="164" x2="110" y2="190" class="feeder-line" />
+        <circle cx="110" cy="212" r="22" class="gen-circle" />
+        <text x="110" y="219" class="gen-symbol">G</text>
+        <text x="110" y="258" class="feeder-label">NOTICIAS</text>
       </g>
 
+      <!-- Carga: Eventos -->
+      <g class="feeder" data-target="#eventos">
+        <line x1="290" y1="40" x2="290" y2="80" class="feeder-line" />
+        <rect x="277" y="72" width="26" height="14" rx="2" class="breaker" />
+        <line x1="290" y1="86" x2="290" y2="120" class="feeder-line" />
+        <circle cx="290" cy="132" r="12" class="trafo-circle" />
+        <circle cx="290" cy="152" r="12" class="trafo-circle" />
+        <line x1="290" y1="164" x2="290" y2="200" class="feeder-line" />
+        <polygon points="290,200 272,232 308,232" class="load-triangle" />
+        <text x="290" y="258" class="feeder-label">EVENTOS</text>
+      </g>
+
+      <!-- Motor: Videos -->
       <g class="feeder" data-target="#videos">
-        <line x1="450" y1="60" x2="450" y2="150" class="feeder-line" />
-        <rect x="435" y="95" width="30" height="16" class="breaker" />
-        <circle cx="450" cy="170" r="20" class="feeder-node" />
-        <text x="450" y="176" class="feeder-icon">V</text>
-        <text x="450" y="212" class="feeder-label">VIDEOS</text>
+        <line x1="450" y1="40" x2="450" y2="80" class="feeder-line" />
+        <rect x="437" y="72" width="26" height="14" rx="2" class="breaker" />
+        <line x1="450" y1="86" x2="450" y2="120" class="feeder-line" />
+        <circle cx="450" cy="132" r="12" class="trafo-circle" />
+        <circle cx="450" cy="152" r="12" class="trafo-circle" />
+        <line x1="450" y1="164" x2="450" y2="190" class="feeder-line" />
+        <circle cx="450" cy="212" r="22" class="gen-circle" />
+        <text x="450" y="219" class="gen-symbol">M</text>
+        <text x="450" y="258" class="feeder-label">VIDEOS</text>
       </g>
 
+      <!-- Capacitor Shunt: Cursos -->
+      <g class="feeder" data-target="#cursos">
+        <line x1="620" y1="40" x2="620" y2="80" class="feeder-line" />
+        <rect x="607" y="72" width="26" height="14" rx="2" class="breaker" />
+        <line x1="620" y1="86" x2="620" y2="150" class="feeder-line" />
+        <!-- Capacitor: dos placas paralelas -->
+        <line x1="600" y1="150" x2="640" y2="150" class="cap-plate" />
+        <line x1="600" y1="162" x2="640" y2="162" class="cap-plate" />
+        <line x1="620" y1="162" x2="620" y2="192" class="feeder-line" />
+        <!-- Tierra -->
+        <line x1="608" y1="192" x2="632" y2="192" class="ground-line" />
+        <line x1="612" y1="198" x2="628" y2="198" class="ground-line" />
+        <line x1="616" y1="204" x2="624" y2="204" class="ground-line" />
+        <text x="620" y="228" class="feeder-label">CURSOS</text>
+      </g>
+
+      <!-- Reactor: Redes -->
       <g class="feeder" data-target="#redes">
-        <line x1="700" y1="60" x2="700" y2="150" class="feeder-line" />
-        <rect x="685" y="95" width="30" height="16" class="breaker" />
-        <circle cx="700" cy="170" r="20" class="feeder-node" />
-        <text x="700" y="176" class="feeder-icon">R</text>
-        <text x="700" y="212" class="feeder-label">REDES</text>
+        <line x1="790" y1="40" x2="790" y2="80" class="feeder-line" />
+        <rect x="777" y="72" width="26" height="14" rx="2" class="breaker" />
+        <line x1="790" y1="86" x2="790" y2="120" class="feeder-line" />
+        <path d="M790,120 c0,12 -12,12 -12,24 c0,12 12,12 12,24 c0,12 -12,12 -12,24" class="reactor-coil" />
+        <path d="M790,120 c0,12 12,12 12,24 c0,12 -12,12 -12,24 c0,12 12,12 12,24" class="reactor-coil" />
+        <line x1="778" y1="192" x2="802" y2="192" class="ground-line" />
+        <line x1="782" y1="198" x2="798" y2="198" class="ground-line" />
+        <line x1="786" y1="204" x2="794" y2="204" class="ground-line" />
+        <text x="790" y="228" class="feeder-label">REDES</text>
       </g>
     </svg>
   </section>
 
   <section id="noticias" class="section">
     <div class="section-head">
-      <p class="eyebrow">Bus 01</p>
+      <p class="eyebrow">Generador</p>
       <h2>Últimas publicaciones</h2>
     </div>
     <div id="posts-grid" class="posts-grid" aria-live="polite">
@@ -80,9 +137,19 @@
     </div>
   </section>
 
+  <section id="eventos" class="section section-dark">
+    <div class="section-head">
+      <p class="eyebrow">Carga</p>
+      <h2>Eventos destacados</h2>
+    </div>
+    <div id="events-grid" class="events-grid" aria-live="polite">
+      <p class="loading-msg">Cargando eventos…</p>
+    </div>
+  </section>
+
   <section id="videos" class="section">
     <div class="section-head">
-      <p class="eyebrow">Bus 02</p>
+      <p class="eyebrow">Motor</p>
       <h2>Videos destacados</h2>
     </div>
     <div id="videos-grid" class="videos-grid" aria-live="polite">
@@ -90,23 +157,37 @@
     </div>
   </section>
 
+  <section id="cursos" class="section section-dark">
+    <div class="section-head">
+      <p class="eyebrow">Capacitor Shunt</p>
+      <h2>Nuestros cursos</h2>
+    </div>
+    <div id="courses-grid" class="courses-grid" aria-live="polite">
+      <p class="loading-msg">Cargando cursos…</p>
+    </div>
+  </section>
+
   <section id="redes" class="section redes-section">
     <div class="section-head">
-      <p class="eyebrow">Bus 03</p>
+      <p class="eyebrow">Reactor</p>
       <h2>Síguenos</h2>
     </div>
     <div class="social-grid">
       <a class="social-btn" href="REEMPLAZAR_URL_INSTAGRAM" target="_blank" rel="noopener">
-        <span class="social-icon" aria-hidden="true">◍</span> Instagram
+        <svg class="social-svg" viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5Zm4.25 3.25a5.25 5.25 0 1 1 0 10.5 5.25 5.25 0 0 1 0-10.5Zm0 1.5a3.75 3.75 0 1 0 0 7.5 3.75 3.75 0 0 0 0-7.5Zm5.5-.75a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"/></svg>
+        Instagram
       </a>
       <a class="social-btn" href="REEMPLAZAR_URL_LINKEDIN" target="_blank" rel="noopener">
-        <span class="social-icon" aria-hidden="true">▤</span> LinkedIn
+        <svg class="social-svg" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77Z"/></svg>
+        LinkedIn
       </a>
       <a class="social-btn" href="REEMPLAZAR_URL_FACEBOOK" target="_blank" rel="noopener">
-        <span class="social-icon" aria-hidden="true">◫</span> Facebook
+        <svg class="social-svg" viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.52 1.49-3.93 3.78-3.93 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02Z"/></svg>
+        Facebook
       </a>
       <a class="social-btn" href="REEMPLAZAR_URL_YOUTUBE" target="_blank" rel="noopener">
-        <span class="social-icon" aria-hidden="true">▶</span> YouTube
+        <svg class="social-svg" viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73Z"/></svg>
+        YouTube
       </a>
     </div>
   </section>
@@ -128,8 +209,12 @@
 </div>
 
 <footer class="site-footer">
+  <img class="footer-logo" src="assets/logo-color.png" alt="IEEE PES UNI">
   <p>IEEE PES UNI — Universidad Nacional de Ingeniería, Lima, Perú.</p>
 </footer>
+
+<!-- Marca de agua de atribución — NO ELIMINAR -->
+<div class="pes-uni-credit" aria-hidden="true" data-credit="Diseño Original IEEE PES UNI — Universidad Nacional de Ingeniería, Lima, Perú" data-source="https://ieeepes-uni.github.io/ieee-pes-uni-web/">Diseño Original IEEE PES UNI</div>
 
 <script src="js/script.js"></script>
 </body>

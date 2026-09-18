@@ -5,11 +5,14 @@ Sitio estático, sin backend, sin base de datos, sin registros. Costo: **$0** (G
 ## Estructura
 
 ```
-index.html          → estructura de la página
-css/style.css        → estilos
-js/script.js         → carga las publicaciones y videos
-data/posts.json      → EDITA AQUÍ cada publicación nueva
-data/videos.json     → EDITA AQUÍ los 3 videos destacados
+index.html             → estructura de la página
+css/style.css           → estilos
+js/script.js            → carga publicaciones, eventos y videos
+assets/logo-white.png   → logo horizontal (fondo oscuro, para el header)
+assets/logo-color.png   → logo horizontal (fondo claro, para el footer)
+data/posts.json         → EDITA AQUÍ cada publicación nueva
+data/events.json        → EDITA AQUÍ cada evento destacado (con foto)
+data/videos.json        → EDITA AQUÍ los 3 videos destacados
 ```
 
 ## Cómo publicar algo nuevo (sin tocar código)
@@ -26,6 +29,26 @@ Abre `data/posts.json` directamente en GitHub (botón del lápiz ✏️) y agreg
 ```
 
 No importa el orden en que las agregues: el sitio las ordena automáticamente por fecha, de la más reciente a la más antigua.
+
+## Cómo agregar un evento destacado (con foto)
+
+Edita `data/events.json`. Cada evento tiene estos campos:
+
+```json
+{
+  "titulo": "Nombre del evento",
+  "fecha": "2026-09-15",
+  "descripcion": "Breve descripción del evento.",
+  "imagen": "https://drive.google.com/uc?export=view&id=ID_DE_DRIVE",
+  "enlace": "https://... (enlace a la publicación del evento, opcional)"
+}
+```
+
+Para la foto del evento puedes usar:
+- **Google Drive**: sube la foto, compártela como "Cualquier persona con el enlace", copia el ID del link de compartir, y usa `https://drive.google.com/uc?export=view&id=TU_ID_AQUI`.
+- **Directamente en el repositorio**: crea una carpeta `fotos/` en el repositorio, sube la imagen, y pon la ruta `fotos/nombre-de-la-foto.jpg`.
+
+Si `"imagen"` queda vacío, la tarjeta aparece con un fondo sólido sin foto.
 
 ## Cómo adjuntar un PDF con vista previa y descarga
 

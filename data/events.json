@@ -1,0 +1,16 @@
+[
+  {
+    "titulo": "Ejemplo: Seminario OMICRON CPC 100",
+    "fecha": "2026-07-20",
+    "descripcion": "Seminario presencial sobre pruebas primarias en equipos de subestación eléctrica.",
+    "imagen": "",
+    "enlace": ""
+  },
+  {
+    "titulo": "Ejemplo: Charla de Sistemas BESS",
+    "fecha": "2026-06-10",
+    "descripcion": "Charla técnica sobre diseño y operación de sistemas de almacenamiento de energía.",
+    "imagen": "",
+    "enlace": ""
+  }
+]
