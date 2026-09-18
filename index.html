@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IEEE PES UNI</title>
+<meta name="description" content="Rama estudiantil IEEE Power &amp; Energy Society de la Universidad Nacional de Ingeniería. Publicaciones, videos y redes sociales.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="brand">
+    <span class="brand-mark" aria-hidden="true">⏚</span>
+    <div class="brand-text">
+      <span class="brand-name">IEEE PES UNI</span>
+      <span class="brand-sub">Power &amp; Energy Society · Rama estudiantil UNI</span>
+    </div>
+  </div>
+  <nav class="site-nav" aria-label="Navegación principal">
+    <a href="#noticias">Noticias</a>
+    <a href="#videos">Videos</a>
+    <a href="#redes">Redes</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Diagrama unifilar del sitio</p>
+      <h1>Todo lo que publicamos, conectado en un solo bus.</h1>
+      <p class="hero-lede">Somos la rama estudiantil de IEEE Power &amp; Energy Society en la UNI. Aquí reunimos nuestras publicaciones recientes, los videos más destacados de nuestro canal y el acceso directo a nuestras redes — sin registros, sin fricción.</p>
+    </div>
+
+    <svg class="sld" viewBox="0 0 900 260" role="img" aria-labelledby="sldTitle">
+      <title id="sldTitle">Diagrama unifilar que conecta a las secciones Noticias, Videos y Redes</title>
+
+      <line x1="90" y1="60" x2="810" y2="60" class="bus-bar" />
+      <circle cx="90" cy="60" r="5" class="bus-node" />
+      <circle cx="810" cy="60" r="5" class="bus-node" />
+
+      <g class="feeder" data-target="#noticias">
+        <line x1="200" y1="60" x2="200" y2="150" class="feeder-line" />
+        <rect x="185" y="95" width="30" height="16" class="breaker" />
+        <circle cx="200" cy="170" r="20" class="feeder-node" />
+        <text x="200" y="176" class="feeder-icon">N</text>
+        <text x="200" y="212" class="feeder-label">NOTICIAS</text>
+      </g>
+
+      <g class="feeder" data-target="#videos">
+        <line x1="450" y1="60" x2="450" y2="150" class="feeder-line" />
+        <rect x="435" y="95" width="30" height="16" class="breaker" />
+        <circle cx="450" cy="170" r="20" class="feeder-node" />
+        <text x="450" y="176" class="feeder-icon">V</text>
+        <text x="450" y="212" class="feeder-label">VIDEOS</text>
+      </g>
+
+      <g class="feeder" data-target="#redes">
+        <line x1="700" y1="60" x2="700" y2="150" class="feeder-line" />
+        <rect x="685" y="95" width="30" height="16" class="breaker" />
+        <circle cx="700" cy="170" r="20" class="feeder-node" />
+        <text x="700" y="176" class="feeder-icon">R</text>
+        <text x="700" y="212" class="feeder-label">REDES</text>
+      </g>
+    </svg>
+  </section>
+
+  <section id="noticias" class="section">
+    <div class="section-head">
+      <p class="eyebrow">Bus 01</p>
+      <h2>Últimas publicaciones</h2>
+    </div>
+    <div id="posts-grid" class="posts-grid" aria-live="polite">
+      <p class="loading-msg">Cargando publicaciones…</p>
+    </div>
+  </section>
+
+  <section id="videos" class="section">
+    <div class="section-head">
+      <p class="eyebrow">Bus 02</p>
+      <h2>Videos destacados</h2>
+    </div>
+    <div id="videos-grid" class="videos-grid" aria-live="polite">
+      <p class="loading-msg">Cargando videos…</p>
+    </div>
+  </section>
+
+  <section id="redes" class="section redes-section">
+    <div class="section-head">
+      <p class="eyebrow">Bus 03</p>
+      <h2>Síguenos</h2>
+    </div>
+    <div class="social-grid">
+      <a class="social-btn" href="REEMPLAZAR_URL_INSTAGRAM" target="_blank" rel="noopener">
+        <span class="social-icon" aria-hidden="true">◍</span> Instagram
+      </a>
+      <a class="social-btn" href="REEMPLAZAR_URL_LINKEDIN" target="_blank" rel="noopener">
+        <span class="social-icon" aria-hidden="true">▤</span> LinkedIn
+      </a>
+      <a class="social-btn" href="REEMPLAZAR_URL_FACEBOOK" target="_blank" rel="noopener">
+        <span class="social-icon" aria-hidden="true">◫</span> Facebook
+      </a>
+      <a class="social-btn" href="REEMPLAZAR_URL_YOUTUBE" target="_blank" rel="noopener">
+        <span class="social-icon" aria-hidden="true">▶</span> YouTube
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<div id="pdf-modal" class="pdf-modal" hidden>
+  <div class="pdf-modal-backdrop" data-close-modal></div>
+  <div class="pdf-modal-panel" role="dialog" aria-modal="true" aria-labelledby="pdf-modal-title">
+    <div class="pdf-modal-head">
+      <h3 id="pdf-modal-title">Documento</h3>
+      <div class="pdf-modal-actions">
+        <a id="pdf-modal-download" class="pdf-download-btn" href="#" target="_blank" rel="noopener">Descargar</a>
+        <button type="button" class="pdf-close-btn" data-close-modal aria-label="Cerrar vista previa">✕</button>
+      </div>
+    </div>
+    <iframe id="pdf-modal-frame" title="Vista previa del PDF" src=""></iframe>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <p>IEEE PES UNI — Universidad Nacional de Ingeniería, Lima, Perú.</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
