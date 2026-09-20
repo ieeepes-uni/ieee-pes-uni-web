@@ -32,8 +32,8 @@
     "poster": "fotos/Contrato de suministro de gas.jpg",
     "documentos": [],
     "sesiones": [
-      { "nombre": "Sesión 1", "video": "https://youtu.be/uqZ8zVzcYPw" },
-      { "nombre": "Sesión 2", "video": "https://youtu.be/U3gtTME_9dw" },
+      { "nombre": "Sesión 1", "video": "https://youtu.be/U3gtTME_9dw" },
+      { "nombre": "Sesión 2", "video": "https://youtu.be/uqZ8zVzcYPw" },
       { "nombre": "Sesión 3", "video": "https://youtu.be/uBjXAHDJbfI" },
       { "nombre": "Sesión 4", "video": "https://youtu.be/W4dzcl_s5oY" }
     ]
