@@ -126,7 +126,7 @@ fetch('data/courses.json')
       grid.innerHTML = '<p class="empty-msg">Aún no hay cursos. Edita data/courses.json.</p>';
       return;
     }
-    grid.innerHTML = courses.map((c, i) => {
+    grid.innerHTML = courses.map((c, ci) => {
       const poster = c.poster ? '<img class="course-poster" src="' + c.poster + '" alt="' + c.titulo + '" loading="lazy">' : '';
       let materials = '';
       if (c.sesiones && c.sesiones.length) {
@@ -136,8 +136,11 @@ fetch('data/courses.json')
           return btns;
         }).join('');
       }
-      if (c.diapositivas) {
-        materials += '<button type="button" class="course-btn-slides" data-course-pdf="' + i + '">Diapositivas</button>';
+      if (c.documentos && c.documentos.length) {
+        materials += c.documentos.map((d, di) => {
+          if (!d.pdf) return '';
+          return '<button type="button" class="course-btn-slides" data-course-idx="' + ci + '" data-doc-idx="' + di + '">' + (d.nombre || 'Documento') + '</button>';
+        }).join('');
       }
       return '<article class="course-card">'
         + poster
@@ -150,10 +153,11 @@ fetch('data/courses.json')
         + '</article>';
     }).join('');
 
-    grid.querySelectorAll('[data-course-pdf]').forEach((btn) => {
+    grid.querySelectorAll('[data-course-idx]').forEach((btn) => {
       btn.addEventListener('click', () => {
-        const course = courses[Number(btn.dataset.coursePdf)];
-        abrirPdf(course.diapositivas, course.titulo + ' — Diapositivas');
+        const course = courses[Number(btn.dataset.courseIdx)];
+        const doc = course.documentos[Number(btn.dataset.docIdx)];
+        abrirPdf(doc.pdf, course.titulo + ' — ' + (doc.nombre || 'Documento'));
       });
     });
   })
