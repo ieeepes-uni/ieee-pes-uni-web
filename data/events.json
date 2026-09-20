@@ -3,21 +3,21 @@
     "titulo": "Seminario OMICRON CPC 100_Colaboración con PROSEGEL S.A.C.",
     "fecha": "2026-09-19",
     "descripcion": "Seminario presencial Operación y pruebas primarias en equipos de subestación eléctrica con la maleta OMICRON CPC100",
-    "imagen": "OperacionypruebasCPC100.png",
+    "imagen": "fotos/OperacionypruebasCPC100.png",
     "enlace": ""
   },
   {
     "titulo": "Gestión de Calidad del Suministro Eléctrico, Smart Grids y Fiscalización Regulatoria",
     "fecha": "2026-09-18",
     "descripcion": "Gestión de la calidad del suministro eléctrico y regulación del sector con aplicación de Smart Grids, telecontrol SCADA y operaciones de red",
-    "imagen": "GestiondecalidaddeSuministro.png",
+    "imagen": "fotos/GestiondecalidaddeSuministro.png",
     "enlace": "https://youtu.be/A-19APyWWy4"
   },
-   {
+  {
     "titulo": "Automatismos de control y protección en instalaciones de alta tensión",
     "fecha": "2026-09-18",
     "descripcion": "Fundamentos de los sistemas de protección en alta tensión y automatismos de control aplicados a subestaciones eléctricas",
-    "imagen": "AutomatismosdeControl.png",
+    "imagen": "fotos/AutomatismosdeControl.png",
     "enlace": "https://youtu.be/D6Yfh_nZvVQ"
   }
 ]
