@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Todos los cursos — IEEE PES UNI</title>
+<meta name="description" content="Mosaico completo de cursos de IEEE PES UNI, con diapositivas y grabaciones de cada sesión.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" type="image/png" href="assets/logo-color.png">
+<style>
+  .page-hero {
+    padding: clamp(32px, 6vw, 56px) clamp(20px, 5vw, 56px) 0;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .page-hero h1 { color: var(--navy); font-size: clamp(1.6rem, 3.4vw, 2.3rem); margin: 0 0 10px; }
+  .page-hero p { color: var(--text-muted); max-width: 60ch; margin: 0; }
+  .back-link {
+    display: inline-block;
+    margin-top: 16px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--copper);
+    text-decoration: none;
+    border-bottom: 1px solid var(--copper);
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="brand">
+    <img class="brand-logo" src="assets/logo-white.png" alt="IEEE PES UNI — Universidad Nacional de Ingeniería, IEEE Student Branch">
+  </a>
+  <nav class="site-nav" aria-label="Navegación principal">
+    <a href="index.html#noticias">Noticias</a>
+    <a href="index.html#eventos">Eventos</a>
+    <a href="index.html#videos">Videos</a>
+    <a href="index.html#cursos">Cursos recientes</a>
+    <a href="index.html#redes">Redes</a>
+  </nav>
+</header>
+
+<main>
+  <div class="page-hero">
+    <p class="eyebrow">Capacitor Shunt — Bus 220 kV</p>
+    <h1>Todos nuestros cursos</h1>
+    <p>El mosaico completo de cursos dictados por IEEE PES UNI, con diapositivas y grabaciones de cada sesión.</p>
+    <a class="back-link" href="index.html">← Volver al inicio</a>
+  </div>
+
+  <section id="cursos" class="section section-dark">
+    <div class="section-head">
+      <p class="eyebrow">Capacitor Shunt</p>
+      <h2>Todos los cursos</h2>
+    </div>
+    <div id="courses-grid" class="courses-grid" aria-live="polite">
+      <p class="loading-msg">Cargando cursos…</p>
+    </div>
+  </section>
+</main>
+
+<div id="pdf-modal" class="pdf-modal" hidden>
+  <div class="pdf-modal-backdrop" data-close-modal></div>
+  <div class="pdf-modal-panel" role="dialog" aria-modal="true" aria-labelledby="pdf-modal-title">
+    <div class="pdf-modal-head">
+      <h3 id="pdf-modal-title">Documento</h3>
+      <div class="pdf-modal-actions">
+        <a id="pdf-modal-download" class="pdf-download-btn" href="#" target="_blank" rel="noopener">Descargar</a>
+        <button type="button" class="pdf-close-btn" data-close-modal aria-label="Cerrar vista previa">✕</button>
+      </div>
+    </div>
+    <iframe id="pdf-modal-frame" title="Vista previa del PDF" src=""></iframe>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <img class="footer-logo" src="assets/logo-color.png" alt="IEEE PES UNI">
+  <p>IEEE PES UNI — Universidad Nacional de Ingeniería, Lima, Perú.</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

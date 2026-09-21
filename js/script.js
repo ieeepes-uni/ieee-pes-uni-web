@@ -75,6 +75,7 @@ fetch('data/posts.json')
   .then((r) => r.json())
   .then((posts) => {
     const grid = document.getElementById('posts-grid');
+    if (!grid) return;
     if (!posts.length) {
       grid.innerHTML = '<p class="empty-msg">Aún no hay publicaciones.</p>';
       return;
@@ -109,6 +110,7 @@ fetch('data/events.json')
   .then((r) => r.json())
   .then((events) => {
     const grid = document.getElementById('events-grid');
+    if (!grid) return;
     if (!events.length) {
       grid.innerHTML = '<p class="empty-msg">Aún no hay eventos. Edita data/events.json.</p>';
       return;
@@ -139,6 +141,7 @@ fetch('data/courses.json')
   .then((r) => r.json())
   .then((courses) => {
     const grid = document.getElementById('courses-grid');
+    if (!grid) return;
     if (!courses.length) {
       grid.innerHTML = '<p class="empty-msg">Aún no hay cursos. Edita data/courses.json.</p>';
       return;
@@ -188,6 +191,7 @@ fetch('data/videos.json')
   .then((r) => r.json())
   .then((videos) => {
     const grid = document.getElementById('videos-grid');
+    if (!grid) return;
     if (!videos.length) {
       grid.innerHTML = '<p class="empty-msg">Aún no hay videos.</p>';
       return;
