@@ -340,6 +340,15 @@ a { color: inherit; }
 }
 
 .event-card:hover { border-color: var(--copper); }
+a.event-card { cursor: pointer; }
+
+.event-cta {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--copper);
+}
 
 .event-thumb {
   width: 100%;

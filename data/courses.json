@@ -18,7 +18,7 @@
     "titulo": "Tarifas y Tópicos en Facturación Eléctrica",
     "instructor": "Ing. Santos Curi",
     "descripcion": "Taller sobre mercado eléctrico peruano, cliente libre de electricidad, sistema de precios y precios regulados, y estructura de costos de un cliente libre.",
-    "poster": "fotos/Tarifas y Topicos de facturacion.webp",
+    "poster": "fotos/poster-tarifas-facturacion.webp",
     "documentos": [],
     "sesiones": [
       { "nombre": "Sesión 1", "video": "https://youtu.be/uhzZLaGkmyg" },
@@ -29,11 +29,11 @@
     "titulo": "Contrato de Suministro de Gas y Transporte",
     "instructor": "Ing. Luis Espinoza",
     "descripcion": "Curso sobre contratos de suministro de gas y transporte, con sesiones realizadas los días 10, 17, 24 y 31 de marzo, y 7 de abril.",
-    "poster": "fotos/Contrato de suministro de gas.jpg",
+    "poster": "fotos/poster-contrato-gas.jpg",
     "documentos": [],
     "sesiones": [
-      { "nombre": "Sesión 1", "video": "https://youtu.be/U3gtTME_9dw" },
-      { "nombre": "Sesión 2", "video": "https://youtu.be/uqZ8zVzcYPw" },
+      { "nombre": "Sesión 1", "video": "https://youtu.be/uqZ8zVzcYPw" },
+      { "nombre": "Sesión 2", "video": "https://youtu.be/U3gtTME_9dw" },
       { "nombre": "Sesión 3", "video": "https://youtu.be/uBjXAHDJbfI" },
       { "nombre": "Sesión 4", "video": "https://youtu.be/W4dzcl_s5oY" }
     ]

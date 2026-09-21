@@ -108,6 +108,7 @@ fetch('data/events.json')
         + '<span class="event-date">' + formatearFecha(e.fecha) + '</span>'
         + '<h3>' + e.titulo + '</h3>'
         + (e.descripcion ? '<p class="event-desc">' + e.descripcion + '</p>' : '')
+        + (e.enlace ? '<span class="event-cta">Ver grabación →</span>' : '')
         + '</div>'
         + '</' + tag + '>';
     }).join('');
@@ -175,7 +176,7 @@ fetch('data/videos.json')
       grid.innerHTML = '<p class="empty-msg">Aún no hay videos.</p>';
       return;
     }
-    grid.innerHTML = videos.slice(0, 3).map((v) => `
+    grid.innerHTML = videos.map((v) => `
       <a class="video-card" href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener">
         <div class="video-thumb-wrap">
           <img src="https://img.youtube.com/vi/${v.id}/hqdefault.jpg" alt="Miniatura: ${v.titulo}" loading="lazy">
