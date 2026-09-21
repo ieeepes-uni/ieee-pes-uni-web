@@ -1,14 +1,14 @@
 :root {
-  --bg: #F2F5F7;
+  --bg: #F1F5F2;
   --surface: #FFFFFF;
-  --navy: #0B2545;
-  --navy-2: #123C69;
+  --navy: #1A753A;
+  --navy-2: #2E9950;
   --copper: #C97C3D;
-  --accent: #1a753a;
-  --text: #10202E;
-  --text-muted: #51697D;
-  --border: #D9E2E8;
-  --dark-bg: #0D1E33;
+  --accent: #34A65B;
+  --text: #12241A;
+  --text-muted: #55705F;
+  --border: #D9E5DC;
+  --dark-bg: #0E2E1A;
 
   --font-display: 'IBM Plex Mono', monospace;
   --font-body: 'Inter', sans-serif;
