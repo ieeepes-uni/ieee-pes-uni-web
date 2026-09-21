@@ -1,16 +1,23 @@
 [
   {
-    "titulo": "Ejemplo: Bienvenida a la nueva gestión",
-    "fecha": "2026-08-01",
-    "resumen": "Reemplaza esta publicación de ejemplo por tu primera noticia real. El resumen puede tener 1-3 líneas.",
-    "enlace": "",
+    "titulo": "Seminario OMICRON CPC 100_Colaboración con PROSEGEL S.A.C.",
+    "fecha": "2026-09-19",
+    "resumen": "Seminario presencial Operación y pruebas primarias en equipos de subestación eléctrica con la maleta OMICRON CPC100",
+    "enlace": "https://www.linkedin.com/feed/update/urn:li:activity:7507682384880947201",
     "pdf": ""
   },
   {
-    "titulo": "Ejemplo: Convocatoria con documento adjunto",
-    "fecha": "2026-07-15",
-    "resumen": "Si agregas 'pdf', aparece un botón 'Ver PDF' que abre una vista previa y permite descargar. Pega el link normal de 'Compartir' de Google Drive, o la ruta de un PDF subido al propio repositorio.",
-    "enlace": "",
+    "titulo": "Gestión de Calidad del Suministro Eléctrico, Smart Grids y Fiscalización Regulatoria",
+    "fecha": "2026-09-18",
+    "resumen": "Gestión de la calidad del suministro eléctrico y regulación del sector con aplicación de Smart Grids, telecontrol SCADA y operaciones de red",
+    "enlace": "https://youtu.be/A-19APyWWy4",
+    "pdf": ""
+  },
+  {
+    "titulo": "Automatismos de control y protección en instalaciones de alta tensión",
+    "fecha": "2026-09-18",
+    "resumen": "Fundamentos de los sistemas de protección en alta tensión y automatismos de control aplicados a subestaciones eléctricas",
+    "enlace": "https://youtu.be/D6Yfh_nZvVQ",
     "pdf": ""
   }
 ]

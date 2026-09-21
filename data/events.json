@@ -1,23 +1,22 @@
 [
   {
-    "titulo": "Seminario OMICRON CPC 100_Colaboración con PROSEGEL S.A.C.",
-    "fecha": "2026-09-19",
-    "descripcion": "Seminario presencial Operación y pruebas primarias en equipos de subestación eléctrica con la maleta OMICRON CPC100",
-    "imagen": "fotos/OperacionypruebasCPC100.png",
-    "enlace": "https://www.linkedin.com/feed/update/urn:li:activity:7507682384880947201"
+    "titulo": "COSINEM II Edición",
+    "fecha": "2026-07-01",
+    "descripcion": "Macro evento de varios días junto al COES, con ponencias técnicas especializadas enfocadas en operación, regulación y el futuro del sistema eléctrico.",
+    "imagen": "fotos/mesaredonda-cosinem.jpg",
+    "enlaces": [
+      { "nombre": "Ver en LinkedIn", "url": "https://www.linkedin.com/feed/update/urn:li:activity:7489495337204711424" },
+      { "nombre": "Ver playlist", "url": "https://youtube.com/playlist?list=PLI5AhyxbG0bE&si=hihUPSHS9-pVTknw" }
+    ]
   },
   {
-    "titulo": "Gestión de Calidad del Suministro Eléctrico, Smart Grids y Fiscalización Regulatoria",
-    "fecha": "2026-09-18",
-    "descripcion": "Gestión de la calidad del suministro eléctrico y regulación del sector con aplicación de Smart Grids, telecontrol SCADA y operaciones de red",
-    "imagen": "fotos/GestiondecalidaddeSuministro.png",
-    "enlace": "https://youtu.be/A-19APyWWy4"
-  },
-  {
-    "titulo": "Automatismos de control y protección en instalaciones de alta tensión",
-    "fecha": "2026-09-18",
-    "descripcion": "Fundamentos de los sistemas de protección en alta tensión y automatismos de control aplicados a subestaciones eléctricas",
-    "imagen": "fotos/AutomatismosdeControl.png",
-    "enlace": "https://youtu.be/D6Yfh_nZvVQ"
+    "titulo": "SUMMIT con IEEE PES UNAC",
+    "fecha": "2026-06-28",
+    "descripcion": "Summit conjunto con IEEE PES UNAC para el intercambio académico y profesional sobre los desafíos y oportunidades del sector energético.",
+    "imagen": "fotos/summit-uni-unac.jpg",
+    "enlaces": [
+      { "nombre": "Ver en LinkedIn", "url": "https://www.linkedin.com/feed/update/urn:li:activity:7473481412038524928" },
+      { "nombre": "Ver playlist", "url": "https://youtube.com/playlist?list=PLNzoLbLkNA4c&si=4hm1qKx9b2w2RDXX" }
+    ]
   }
 ]

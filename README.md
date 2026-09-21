@@ -54,7 +54,8 @@ Edita `data/events.json`. Cada evento tiene estos campos:
   "fecha": "2026-09-15",
   "descripcion": "Breve descripción del evento.",
   "imagen": "https://drive.google.com/uc?export=view&id=ID_DE_DRIVE",
-  "enlace": "https://... (enlace a la publicación del evento, opcional)"
+  "enlace": "https://... (enlace a la publicación del evento, opcional)",
+  "pdf": "documentos/bases.pdf (opcional — igual que en publicaciones, agrega un botón 'Ver PDF')"
 }
 ```
 
@@ -62,7 +63,18 @@ Para la foto del evento puedes usar:
 - **Google Drive**: sube la foto, compártela como "Cualquier persona con el enlace", copia el ID del link de compartir, y usa `https://drive.google.com/uc?export=view&id=TU_ID_AQUI`.
 - **Directamente en el repositorio**: crea una carpeta `fotos/` en el repositorio, sube la imagen, y pon la ruta `fotos/nombre-de-la-foto.jpg`.
 
-Si `"imagen"` queda vacío, la tarjeta aparece con un fondo sólido sin foto.
+Si `"imagen"` queda vacío, la tarjeta aparece con un fondo sólido sin foto. `"pdf"` sigue el mismo patrón que en publicaciones: acepta un link de Drive o una ruta local, y si queda vacío, simplemente no aparece el botón.
+
+**Si el evento tiene más de un link** (por ejemplo LinkedIn + playlist de YouTube), usa `"enlaces"` en vez de `"enlace"`:
+
+```json
+"enlaces": [
+  { "nombre": "Ver en LinkedIn", "url": "https://www.linkedin.com/..." },
+  { "nombre": "Ver playlist", "url": "https://youtube.com/playlist?list=..." }
+]
+```
+
+Puedes agregar tantos como necesites; cada uno aparece como su propio botón en la tarjeta.
 
 ## Cómo adjuntar un PDF con vista previa y descarga
 

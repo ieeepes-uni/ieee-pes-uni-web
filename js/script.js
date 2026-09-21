@@ -80,7 +80,7 @@ fetch('data/posts.json')
       grid.innerHTML = '<p class="empty-msg">Aún no hay publicaciones.</p>';
       return;
     }
-    const ordenadas = [...posts].sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
+    const ordenadas = [...posts].sort((a, b) => new Date(b.fecha) - new Date(a.fecha)).slice(0, 3);
     grid.innerHTML = ordenadas.map((p, i) => `
       <article class="post-card">
         <span class="post-date">${formatearFecha(p.fecha)}</span>
@@ -115,21 +115,31 @@ fetch('data/events.json')
       grid.innerHTML = '<p class="empty-msg">Aún no hay eventos. Edita data/events.json.</p>';
       return;
     }
-    const ordenados = [...events].sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
-    grid.innerHTML = ordenados.map((e) => {
+    const ordenados = [...events].sort((a, b) => new Date(b.fecha) - new Date(a.fecha)).slice(0, 4);
+    grid.innerHTML = ordenados.map((e, i) => {
       const imgSrc = e.imagen || '';
-      const tag = e.enlace ? 'a' : 'div';
-      const href = e.enlace ? ' href="' + e.enlace + '" target="_blank" rel="noopener"' : '';
-      return '<' + tag + ' class="event-card"' + href + '>'
+      return '<div class="event-card">'
         + (imgSrc ? '<img class="event-thumb" src="' + imgSrc + '" alt="' + e.titulo + '" loading="lazy">' : '<div class="event-thumb"></div>')
         + '<div class="event-body">'
         + '<span class="event-date">' + formatearFecha(e.fecha) + '</span>'
         + '<h3>' + e.titulo + '</h3>'
         + (e.descripcion ? '<p class="event-desc">' + e.descripcion + '</p>' : '')
-        + (e.enlace ? '<span class="event-cta">Ver grabación →</span>' : '')
+        + '<div class="event-actions">'
+        + (e.enlaces && e.enlaces.length
+            ? e.enlaces.map((l) => '<a class="event-link" href="' + l.url + '" target="_blank" rel="noopener">' + (l.nombre || 'Ver más') + ' →</a>').join('')
+            : (e.enlace ? '<a class="event-link" href="' + e.enlace + '" target="_blank" rel="noopener">Ver publicación →</a>' : ''))
+        + (e.pdf ? '<button type="button" class="pdf-open-btn" data-event-pdf="' + i + '">Ver PDF</button>' : '')
         + '</div>'
-        + '</' + tag + '>';
+        + '</div>'
+        + '</div>';
     }).join('');
+
+    grid.querySelectorAll('[data-event-pdf]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const event = ordenados[Number(btn.dataset.eventPdf)];
+        abrirPdf(event.pdf, event.titulo);
+      });
+    });
   })
   .catch(() => {
     document.getElementById('events-grid').innerHTML =
@@ -185,6 +195,24 @@ fetch('data/courses.json')
     document.getElementById('courses-grid').innerHTML =
       '<p class="empty-msg">No se pudo cargar data/courses.json.</p>';
   });
+
+// --- Próximamente (mosaico simple: imagen + link de LinkedIn) ---
+fetch('data/proximamente.json')
+  .then((r) => r.json())
+  .then((items) => {
+    const grid = document.getElementById('proximamente-grid');
+    if (!grid) return;
+    // Si no hay nada cargado todavía, se deja en blanco (sin mensaje de aviso).
+    if (!items.length) { grid.innerHTML = ''; return; }
+    grid.innerHTML = items.slice(0, 3).map((it) => {
+      const imgSrc = it.imagen || '';
+      const inner = (imgSrc ? '<img class="proximamente-thumb" src="' + imgSrc + '" alt="' + (it.titulo || 'Próximamente') + '" loading="lazy">' : '<div class="proximamente-thumb"></div>');
+      return it.enlace
+        ? '<a class="proximamente-tile" href="' + it.enlace + '" target="_blank" rel="noopener">' + inner + '</a>'
+        : '<div class="proximamente-tile">' + inner + '</div>';
+    }).join('');
+  })
+  .catch(() => {});
 
 // --- Videos destacados ---
 fetch('data/videos.json')
