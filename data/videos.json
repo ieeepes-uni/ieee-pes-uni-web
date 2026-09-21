@@ -1,22 +1,7 @@
 [
-  {
-    "id": "BQxL_7yhjfQ",
-    "titulo": "Mesa Redonda - COSINEM II"
-  },
-  {
-    "id": "ua469X84piQ",
-    "titulo": "CV ATS y ENTREVISTAS: Estrategias Para Destacar"
-  },
-  {
-    "id": "dyPzugMLK3E",
-    "titulo": "Prestación de la Regulación Primaria de Frecuencia en el SEIN"
-  },
-  {
-    "id": "Cl4D4olQYlA",
-    "titulo": "40 años de Experiencia en el Mantenimiento del Aislamiento en la Costa Peruana"
-  },
-  {
-    "id": "WsGB-OtPyVs",
-    "titulo": "COSINEM II Edición | Matriz Energética del Perú al 2050 y Plan Estratégico COES 2023–2030"
-  }
+  { "id": "BQxL_7yhjfQ", "titulo": "Mesa Redonda - COSINEM II" },
+  { "id": "ua469X84piQ", "titulo": "CV ATS y ENTREVISTAS: Estrategias Para Destacar" },
+  { "id": "dyPzugMLK3E", "titulo": "Prestación de la Regulación Primaria de Frecuencia en el SEIN" },
+  { "id": "Cl4D4olQYlA", "titulo": "40 años de Experiencia en el Mantenimiento del Aislamiento en la Costa Peruana" },
+  { "id": "WsGB-OtPyVs", "titulo": "COSINEM II Edición | Matriz Energética del Perú al 2050 y Plan Estratégico COES 2023–2030" }
 ]
