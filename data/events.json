@@ -1,5 +1,14 @@
 [
   {
+    "titulo": "Convocatoria SINELEC 2026 — Feria de Proyectos",
+    "fecha": "2026-12-05",
+    "estado": "En curso",
+    "descripcion": "IEEE PES UNI, IEEE IAS UNI y CCIESAM presentan SINELEC 2026: una plataforma para convertir ideas estudiantiles en soluciones reales para la industria eléctrica y energética, con 7 ejes temáticos. Sábado 5 de diciembre, FIEE-UNI. Convocatoria abierta hasta el 30 de septiembre.",
+    "imagen": "fotos/poster-sinelec.png",
+    "enlace": "https://www.linkedin.com/feed/update/urn:li:activity:7506106398120763392",
+    "pdf": "documentos/Bases_Oficiales_SINELEC_2026.pdf"
+  },
+  {
     "titulo": "COSINEM II Edición",
     "fecha": "2026-07-01",
     "descripcion": "Macro evento de varios días junto al COES, con ponencias técnicas especializadas enfocadas en operación, regulación y el futuro del sistema eléctrico.",

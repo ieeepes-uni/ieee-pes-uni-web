@@ -83,12 +83,15 @@ fetch('data/posts.json')
     const ordenadas = [...posts].sort((a, b) => new Date(b.fecha) - new Date(a.fecha)).slice(0, 3);
     grid.innerHTML = ordenadas.map((p, i) => `
       <article class="post-card">
-        <span class="post-date">${formatearFecha(p.fecha)}</span>
-        <h3>${p.titulo}</h3>
-        <p>${p.resumen}</p>
-        <div class="post-actions">
-          ${p.enlace ? '<a class="post-link" href="' + p.enlace + '" target="_blank" rel="noopener">Ver más →</a>' : ''}
-          ${p.pdf ? '<button type="button" class="pdf-open-btn" data-pdf-index="' + i + '">Ver PDF</button>' : ''}
+        ${p.imagen ? '<img class="post-thumb" src="' + p.imagen + '" alt="' + p.titulo + '" loading="lazy">' : ''}
+        <div class="post-card-body">
+          <span class="post-date">${formatearFecha(p.fecha)}</span>
+          <h3>${p.titulo}</h3>
+          <p>${p.resumen}</p>
+          <div class="post-actions">
+            ${p.enlace ? '<a class="post-link" href="' + p.enlace + '" target="_blank" rel="noopener">Ver más →</a>' : ''}
+            ${p.pdf ? '<button type="button" class="pdf-open-btn" data-pdf-index="' + i + '">Ver PDF</button>' : ''}
+          </div>
         </div>
       </article>
     `).join('');
@@ -121,7 +124,7 @@ fetch('data/events.json')
       return '<div class="event-card">'
         + (imgSrc ? '<img class="event-thumb" src="' + imgSrc + '" alt="' + e.titulo + '" loading="lazy">' : '<div class="event-thumb"></div>')
         + '<div class="event-body">'
-        + '<span class="event-date">' + formatearFecha(e.fecha) + '</span>'
+        + '<span class="event-date">' + (e.estado || formatearFecha(e.fecha)) + '</span>'
         + '<h3>' + e.titulo + '</h3>'
         + (e.descripcion ? '<p class="event-desc">' + e.descripcion + '</p>' : '')
         + '<div class="event-actions">'

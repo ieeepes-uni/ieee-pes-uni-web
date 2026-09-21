@@ -24,7 +24,9 @@ Abre `data/posts.json` directamente en GitHub (botón del lápiz ✏️) y agreg
   "titulo": "Título de la publicación",
   "fecha": "2026-08-21",
   "resumen": "Uno o dos renglones de resumen.",
-  "enlace": "https://... (opcional, puede quedar vacío: \"\")"
+  "imagen": "fotos/nombre-de-la-foto.jpg (opcional, mismo patrón que eventos: Drive o ruta local; vacío = sin foto)",
+  "enlace": "https://... (opcional, puede quedar vacío: \"\")",
+  "pdf": "documentos/archivo.pdf (opcional)"
 }
 ```
 
@@ -36,13 +38,27 @@ El diagrama tiene dos niveles de bus (220 kV y 13.8 kV) y cada símbolo lleva a 
 
 - **Generador izquierdo** → `agradecimientos.html` (página propia "en construcción", edítala directamente cuando tengas el contenido)
 - **Generador derecho** → sección Noticias
-- **Reactor** → sección Redes
+- **Reactor izquierdo** → sección Próximamente
+- **Reactor derecho** → sección Redes
 - **Carga** → sección Eventos
 - **Motor izquierdo** → sección Videos
 - **Motor derecho** → abre el grupo de WhatsApp en una pestaña nueva
-- **Capacitor** → sección Cursos
+- **Capacitor (bus 13.8 kV)** → sección Cursos recientes (dentro del inicio)
+- **Capacitor (bus 220 kV)** → `cursos.html` (página aparte con todos los cursos)
 
 Si cambias el link del grupo de WhatsApp, edítalo en `index.html` buscando `data-href="https://chat.whatsapp.com/...`.
+
+## Sobre la sección Próximamente
+
+`data/proximamente.json` funciona como 3 casillas fijas de imagen + link (sin fecha, sin descripción — es un mosaico simple). Si una casilla no tiene contenido todavía, dejas `"imagen"` y `"enlace"` vacíos y esa tarjeta aparece en blanco, sin texto de aviso:
+
+```json
+{ "titulo": "", "imagen": "", "enlace": "" }
+```
+
+## Sobre el campo "estado" en eventos
+
+Si un evento está en curso o no tiene una fecha puntual, puedes agregar `"estado": "En curso"` (o el texto que quieras) — reemplaza a la fecha formateada en la tarjeta, aunque `"fecha"` se sigue usando para decidir el orden.
 
 ## Cómo agregar un evento destacado (con foto)
 
