@@ -30,6 +30,20 @@ Abre `data/posts.json` directamente en GitHub (botón del lápiz ✏️) y agreg
 
 No importa el orden en que las agregues: el sitio las ordena automáticamente por fecha, de la más reciente a la más antigua.
 
+## Sobre el diagrama unifilar del inicio
+
+El diagrama tiene dos niveles de bus (220 kV y 13.8 kV) y cada símbolo lleva a una parte distinta:
+
+- **Generador izquierdo** → `agradecimientos.html` (página propia "en construcción", edítala directamente cuando tengas el contenido)
+- **Generador derecho** → sección Noticias
+- **Reactor** → sección Redes
+- **Carga** → sección Eventos
+- **Motor izquierdo** → sección Videos
+- **Motor derecho** → abre el grupo de WhatsApp en una pestaña nueva
+- **Capacitor** → sección Cursos
+
+Si cambias el link del grupo de WhatsApp, edítalo en `index.html` buscando `data-href="https://chat.whatsapp.com/...`.
+
 ## Cómo agregar un evento destacado (con foto)
 
 Edita `data/events.json`. Cada evento tiene estos campos:

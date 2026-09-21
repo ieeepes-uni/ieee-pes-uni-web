@@ -1,9 +1,25 @@
 // --- Navegación desde el diagrama unifilar ---
+// Cada feeder puede: hacer scroll interno (data-target), abrir una página
+// del propio sitio (data-href), o abrir un link externo en pestaña nueva
+// (data-href + data-external="true").
 document.querySelectorAll('.feeder').forEach((feeder) => {
   const target = feeder.getAttribute('data-target');
+  const href = feeder.getAttribute('data-href');
+  const external = feeder.getAttribute('data-external') === 'true';
+
   feeder.setAttribute('tabindex', '0');
   feeder.setAttribute('role', 'link');
-  const go = () => document.querySelector(target)?.scrollIntoView({ behavior: 'smooth' });
+
+  const go = () => {
+    if (target) {
+      document.querySelector(target)?.scrollIntoView({ behavior: 'smooth' });
+    } else if (href && external) {
+      window.open(href, '_blank', 'noopener');
+    } else if (href) {
+      window.location.href = href;
+    }
+  };
+
   feeder.addEventListener('click', go);
   feeder.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); }
