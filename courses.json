@@ -1,0 +1,56 @@
+[
+  {
+    "titulo": "Introducción al Modelado EMT de Recursos basados en Inversores (IBR) mediante Simulink",
+    "instructor": "Ing. Dr. Diego Aragón — Luxembourg Institute of Science and Technology (LIST)",
+    "descripcion": "Curso taller virtual de 2 sesiones sobre introducción a los recursos basados en inversores (IBR), fundamentos del modelado EMT, estrategias de control de IBR y modelado EMT en Simulink. Septiembre 2026.",
+    "poster": "fotos/EMT.jpg",
+    "documentos": [
+      { "nombre": "Presentación — Simulación EMT", "pdf": "documentos/IEEE_EMT_RMS.pdf" },
+      { "nombre": "Paper — SOFIE", "pdf": "documentos/Paper2.pdf" },
+      { "nombre": "Paper — Grid-Forming", "pdf": "documentos/GFC_paper.pdf" }
+    ],
+    "sesiones": [
+      { "nombre": "Sesión 1", "video": "https://youtu.be/5zJQvxhckOc" },
+      { "nombre": "Sesión 2", "video": "https://youtu.be/BrL_vZmbPqQ" }
+    ]
+  },
+  {
+    "titulo": "Compensación de Potencia Reactiva: Modelamiento y control de SVC",
+    "instructor": "Ing. Dr. Francis Arody Moreno — Universidad de Brasilia",
+    "descripcion": "Curso virtual de 3 sesiones sobre modelamiento y control de compensadores estáticos (SVC) en sistemas eléctricos de potencia. Septiembre 2026.",
+    "poster": "fotos/poster-svc.png",
+    "documentos": [
+      { "nombre": "Diapositivas — Sesión 1", "pdf": "documentos/SVC_Aula01.pdf" },
+      { "nombre": "Presentación completa", "pdf": "documentos/Apresentação - SVC - completo.pdf" }
+    ],
+    "sesiones": [
+      { "nombre": "Sesión 1", "video": "https://youtu.be/Ft4BbUBgxUA" },
+      { "nombre": "Sesión 2", "video": "https://youtu.be/oZm7qcFuZjk" },
+      { "nombre": "Sesión 3", "video": "https://youtu.be/yJli_xjSa1I" }
+    ]
+  },
+  {
+    "titulo": "Tarifas y Tópicos en Facturación Eléctrica",
+    "instructor": "Ing. Santos Curi",
+    "descripcion": "Taller sobre mercado eléctrico peruano, cliente libre de electricidad, sistema de precios y precios regulados, y estructura de costos de un cliente libre.",
+    "poster": "fotos/poster-tarifas-facturacion.webp",
+    "documentos": [],
+    "sesiones": [
+      { "nombre": "Sesión 1", "video": "https://youtu.be/uhzZLaGkmyg" },
+      { "nombre": "Sesión 2", "video": "https://youtu.be/wpNP_rJH-00" }
+    ]
+  },
+  {
+    "titulo": "Contrato de Suministro de Gas y Transporte",
+    "instructor": "Ing. Luis Espinoza",
+    "descripcion": "Curso sobre contratos de suministro de gas y transporte, con sesiones realizadas los días 10, 17, 24 y 31 de marzo, y 7 de abril.",
+    "poster": "fotos/poster-contrato-gas.jpg",
+    "documentos": [],
+    "sesiones": [
+      { "nombre": "Sesión 1", "video": "https://youtu.be/uqZ8zVzcYPw" },
+      { "nombre": "Sesión 2", "video": "https://youtu.be/U3gtTME_9dw" },
+      { "nombre": "Sesión 3", "video": "https://youtu.be/uBjXAHDJbfI" },
+      { "nombre": "Sesión 4", "video": "https://youtu.be/W4dzcl_s5oY" }
+    ]
+  }
+]
