@@ -1,5 +1,18 @@
 [
   {
+    "titulo": "Introducción al Modelado EMT de Recursos basados en Inversores (IBR) mediante Simulink",
+    "instructor": "Ing. Dr. Diego Aragón — Luxembourg Institute of Science and Technology (LIST)",
+    "descripcion": "Curso taller virtual de 2 sesiones sobre introducción a los recursos basados en inversores (IBR), fundamentos del modelado EMT, estrategias de control de IBR y modelado EMT en Simulink. Septiembre 2026.",
+    "poster": "fotos/EMT.jpg",
+    "documentos": [
+      { "nombre": "Diapositivas — Sesión 1", "pdf": "documentos/IEEE_EMT_RMS.pdf" }
+    ],
+    "sesiones": [
+      { "nombre": "Sesión 1", "video": "https://youtu.be/5zJQvxhckOc" },
+      { "nombre": "Sesión 2", "video": "https://youtu.be/BrL_vZmbPqQ" }
+    ]
+  },
+  {
     "titulo": "Compensación de Potencia Reactiva: Modelamiento y control de SVC",
     "instructor": "Ing. Dr. Francis Arody Moreno — Universidad de Brasilia",
     "descripcion": "Curso virtual de 3 sesiones sobre modelamiento y control de compensadores estáticos (SVC) en sistemas eléctricos de potencia. Septiembre 2026.",
